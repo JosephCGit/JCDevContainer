@@ -1,0 +1,1 @@
+This is a basic DevContainer for ubuntu that is designed to be used to develop a simple flutter app for a app development course. It should work on any machine that has docker desktop, though vscode may also be required
