@@ -1,5 +1,7 @@
 # Container Read me
 
+Created by Joseph C
+
 This container should work on any intel machine. If it doesn't please let me know (Addressed to my professor, but any visitor is welcome to leave a comment).
 
 First for the container to work you need to have Flutter Desktop installed on your computer, ideally you should create an account as well but the container still worked in Docker without an account. Additionally you should have vscode installed with the devcontainer extension and git as well, this container should work on other platforms but the instructions are intended for vscode.
