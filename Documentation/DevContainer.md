@@ -41,17 +41,17 @@ Depending on what you're doing you may need to follow some extra steps/tips
   3. To run the app use the following string of commands
      >cd (appname)
      >flutter run -d web-server
-  4. To check the app open up the ports in VSCode. Two should be active, 1 will just be a 404 error but the other should be a webpage with a button that increments a counter
+  4. To check the app open up the ports in VSCode. Two should be active, 1 will just be a 404 error but the other should be a webpage with a button that increments a counter.
 
 ## Challenges and Solutions
 Initially I tried to do a clone command to install flutter, however this didn't seem to copy all files required for the Flutter SDK and VSCode didn't seem to be able to locate the Flutter SDK. You could technically work from this point by just doing steps locally to locate the Flutter SDK and install the remaining files but that defeats the point of a devcontainer so that route was scrapped. 
 
-I then tried to use the Flutter SDK feature for Ubuntu and found it succesfully installed Flutter and could create apps, however an error would occur with permission being denied to Flutter during app creation, and trying to run the app after creation would end up causing another permission error. I tried to use the chmod on the file identified as access denied but this didn't work, then I tried to just run the blanket chmod -R command but this also didn't work, making the command a sudo command did the trick. 
+I then tried to use the Flutter SDK feature for Ubuntu and found it successfully installed Flutter and could create apps, however an error would occur with permission being denied to Flutter during app creation, and trying to run the app after creation would end up causing another permission error. I tried to use the chmod on the file identified as access denied but this didn't work, then I tried to just run the blanket chmod -R command but this also didn't work, making the command a sudo command did the trick. 
 
 These were just my issues with trying to install Flutter without investing much time into it, you could absolutely find ways to install Flutter without the feature or a way to get the Flutter SDK to work without using the chmod -R command.
 ## Conclusion
-The Devcontainer so far has been helpful just for standardizing the environement for professor grading, if I had multiple machines it would also be helpful in allowing me to set up and do consistent development on multiple machines.
+The Devcontainer so far has been helpful just for standardizing the environment for professor grading, if I had multiple machines it would also be helpful in allowing me to set up and do consistent development on multiple machines.
 
 This process gave me an insight into the challenges of trying to make installation and use of software easy for an end user. Just trying to get flutter to install without additional effort on the user's end was a major challenge and that's just one program with plenty of documentation and a thankfully easy to use feature. If I went through with the clone install process it would have required far more work in terms of commands just to get it working. 
 
-Modern game platforms like Steam are expected to present users with a well documented store page with a single install button that when hit installs an entire game and the dependencies to run it, whilst the game developers are expected to then get the game to run on the hardware with any required dependencies by the user just hitting the play buttton.
+Modern game platforms like Steam are expected to present users with a well documented store page with a single install button that when hit installs an entire game and the dependencies to run it, whilst the game developers are expected to then get the game to run on the hardware with any required dependencies by the user just hitting the play button.
