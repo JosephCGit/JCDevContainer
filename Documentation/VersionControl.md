@@ -27,22 +27,31 @@ Without these commands you will be met with an error when trying to commit any c
 
 If you want to retrieve a github you can use one of two commands
 >git clone (url)
-
-This will copy an entire repository
-
+>
 >git pull
 
-This will pull any changes from the repository and merge them to your local branch. So if the repository has a new file, your local branch will gain that file.
+Clone will copy an entire repository, this is only recommended if your just starting to use a repository.  
+Pull will pull any changes from the repository and merge them to your local branch. So if the repository has a new file, your local branch will gain that file.
 
-If you want to change the remote branch you can use one of two commands
+If you want to change the remote branch you can use the commands
 
 >git commit -m (message)
 
 This will change the remote branch based on your local changes, with the -m adding a commit message to describe the change.
 
->git push (remote name) (branch name)
+If you need to revert changes there are a couple of options you have
+>git revert
+>git reset (commitname)
+>git rebase (branchname)
 
-This will create a request to change the remote branch based on your local changes. A more indepth explanation of pushing can be found [here](https://docs.github.com/en/get-started/using-git/pushing-commits-to-a-remote-repository)
+Revert will revert the changes of the last commit while reset will remove history of any commits after a certain commit while rebase will apply the commits of one branch ahead of main. Rebase and reset should only be used in emergencies such as if code is extremely broken or if you accidently leave secrets in your repository.
+
+To create and merge branches you use the following two commands
+>git branch (branchname)
+>
+>git merge (branchname)
+
+Branch creates a branch with your branchname while merge will merge the named branches with main
 ## Collaboration
 
 ## Challenges and Solutions
