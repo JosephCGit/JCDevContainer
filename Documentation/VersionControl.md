@@ -18,7 +18,31 @@ The Github repository is integrated with my DevContainer using VSCode's built in
 
 As for the Development Pipeline Github integrates with that using the Github actions to create build, testing, and deployment scripts. There is for instance already documentation of a build script for Flutter on Linux systems.
 ## Common Commands
+Before using any commands you first want to use these two commands to commit any changes to your github
+> git config --global user.email (Your emailname@emailservice.com)
+>
+>git config --global user.name (Your username)
 
+Without these commands you will be met with an error when trying to commit any changes.
+
+If you want to retrieve a github you can use one of two commands
+>git clone (url)
+
+This will copy an entire repository
+
+>git pull
+
+This will pull any changes from the repository and merge them to your local branch. So if the repository has a new file, your local branch will gain that file.
+
+If you want to change the remote branch you can use one of two commands
+
+>git commit -m (message)
+
+This will change the remote branch based on your local changes, with the -m adding a commit message to describe the change.
+
+>git push (remote name) (branch name)
+
+This will create a request to change the remote branch based on your local changes. A more indepth explanation of pushing can be found [here](https://docs.github.com/en/get-started/using-git/pushing-commits-to-a-remote-repository)
 ## Collaboration
 
 ## Challenges and Solutions
