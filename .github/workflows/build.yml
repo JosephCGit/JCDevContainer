@@ -21,8 +21,11 @@ jobs:
       with:
         channel: 'stable'
     - name: Get Flutter dependencies
+    - run: cd basicapp
     - run: flutter pub get
     - name: Run provided Flutter app tests
+    - run: cd basicapp
     - run: flutter test
     - name: Build Flutter application
+    - run: cd basicapp
     - run: flutter build web
