@@ -3,12 +3,10 @@
 # separate terms of service, privacy policy, and support
 # documentation.
 
-name: Dart
+name: Build Pipeline
 
 on:
   push:
-    branches: [ "main" ]
-  pull_request:
     branches: [ "main" ]
 
 jobs:
@@ -16,16 +14,16 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v4
-    - uses: subosito/flutter-action@v2
-      with:
-        channel: 'stable'
-    - name: Get Flutter dependencies
-    - run: cd basicapp
-    - run: flutter pub get
-    - name: Run provided Flutter app tests
-    - run: cd basicapp
-    - run: flutter test
-    - name: Build Flutter application
-    - run: cd basicapp
-    - run: flutter build web
+      - uses: actions/checkout@v4
+      - uses: subosito/flutter-action@v2
+        with:
+          channel: 'stable'
+      - name: Get Flutter dependencies
+      - working-directory: ./basicapp
+      - run: flutter pub get
+      - name: Run provided Flutter app tests
+      - working-directory: ./basicapp
+      - run: flutter test
+      - name: Build Flutter application
+      - working-directory: ./basicapp
+      - run: flutter build web
