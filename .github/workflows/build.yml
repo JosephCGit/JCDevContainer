@@ -1,26 +1,37 @@
 name: Build Pipeline
-
+#This build pipeline does two jobs, it clones the repository as one job in case the repository doesn't exist. Then it builds the flutter app. This is set to run on ubuntu-latest just like the devcontainer
+#It runs a default command of working-directory ./basicapp to reduce the number of lines used. Then it proceeds to get flutter dependencies with flutter pub get, runs the flutter app tests with flutter test
+#It then builds the flutter web app with flutter build web
+#Action is taken from flutter actions (https://github.com/marketplace/actions/flutter-action)
+#learned about defaults here (https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions#jobsjob_iddefaultsrunworking-directory)
 on:
   push:
     branches: [ "main" ]
 
 jobs:
+  clone:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Clone repository
+        run: git clone https://github.com/JosephCGit/JCDevContainer
   build:
     runs-on: ubuntu-latest
-
+    defaults:
+      run:
+        working-directory: ./basicapp
     steps:
       - uses: actions/checkout@v4
       - uses: subosito/flutter-action@v2
         with:
           channel: 'stable'
-      - name: clone repository
-        run: git clone https://github.com/JosephCGit/JCDevContainer
+     # - name: clone repository
+      #  run: git clone https://github.com/JosephCGit/JCDevContainer
       - name: Get Flutter dependencies
-        working-directory: ./basicapp
+        #working-directory: ./basicapp
         run: flutter pub get
       - name: Run provided Flutter app tests
-        working-directory: ./basicapp
+        #working-directory: ./basicapp
         run: flutter test
       - name: Build Flutter application
-        working-directory: ./basicapp
+        #working-directory: ./basicapp
         run: flutter build web
