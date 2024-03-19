@@ -24,14 +24,9 @@ jobs:
       - uses: subosito/flutter-action@v2
         with:
           channel: 'stable'
-     # - name: clone repository
-      #  run: git clone https://github.com/JosephCGit/JCDevContainer
       - name: Get Flutter dependencies
-        #working-directory: ./basicapp
         run: flutter pub get
       - name: Run provided Flutter app tests
-        #working-directory: ./basicapp
         run: flutter test
       - name: Build Flutter application
-        #working-directory: ./basicapp
         run: flutter build web
