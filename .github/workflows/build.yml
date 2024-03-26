@@ -16,9 +16,9 @@ jobs:
         run: git clone https://github.com/JosephCGit/JCDevContainer
   build:
     runs-on: ubuntu-latest
-    defaults:
-      run:
-        working-directory: ./basicapp
+    #defaults:
+    #  run:
+    #    working-directory: ./basicapp
     steps:
     #  - name: Clone repository
     #    run: git clone https://github.com/JosephCGit/JCDevContainer
@@ -27,17 +27,18 @@ jobs:
         with:
           channel: 'stable'
       - name: Get Flutter dependencies
-        #working-directory: ./basicapp
+        working-directory: ./basicapp
         run: flutter pub get
       - name: Run provided Flutter app tests
-        #working-directory: ./basicapp
+        working-directory: ./basicapp
         run: flutter test
       - name: Build Flutter application
-        #working-directory: ./basicapp
+        working-directory: ./basicapp
         run: flutter build web
-  deploy:
-    runs-on: ubuntu-latest
-    steps:
+  #deploy:
+  #  runs-on: ubuntu-latest
+  #  steps:
+      - name: Deploy Webpage with Flutter deploy
       - uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
