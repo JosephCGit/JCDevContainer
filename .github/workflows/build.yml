@@ -38,7 +38,7 @@ jobs:
   #deploy:
   #  runs-on: ubuntu-latest
   #  steps:
-      - name: Deploy Webpage with github pages
+      - name: Deploy Webpage with GitHub pages
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
