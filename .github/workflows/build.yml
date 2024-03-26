@@ -9,30 +9,36 @@ on:
     branches: [ "main" ]
 
 jobs:
-  clone:
+  #clone:
+    #runs-on: ubuntu-latest
+    #steps:
+      #- name: Clone repository
+      #  run: git clone https://github.com/JosephCGit/JCDevContainer
+  build:
     runs-on: ubuntu-latest
+    #defaults:
+    #  run:
+    #    working-directory: ./basicapp
     steps:
       - name: Clone repository
         run: git clone https://github.com/JosephCGit/JCDevContainer
-  build:
-    runs-on: ubuntu-latest
-    defaults:
-      run:
-        working-directory: ./basicapp
-    steps:
       - uses: actions/checkout@v4
       - uses: subosito/flutter-action@v2
         with:
           channel: 'stable'
       - name: Get Flutter dependencies
+        working-directory: ./basicapp
         run: flutter pub get
       - name: Run provided Flutter app tests
+        working-directory: ./basicapp
         run: flutter test
       - name: Build Flutter application
+        working-directory: ./basicapp
         run: flutter build web
-  deploy:
-    runs-on: ubuntu-latest
-    steps:
+  #deploy:
+  #  runs-on: ubuntu-latest
+ #   steps:
+      - name: Deploy using Github pages
       - uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
